@@ -1,0 +1,334 @@
+/* Large Monitors (>= 1200px) */
+@media (min-width: 1200px) {
+    .iphone-frame::before {
+        width: 220px;
+        height: 35px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    .iphone-frame::after {
+        width: 70px;
+        height: 10px;
+        border-radius: 5px;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        padding: 5rem 2rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+
+    .iphone-frame {
+        width: 400px;
+        height: 780px;
+        border-radius: 50px;
+    }
+
+    .pricing {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        margin-top: auto;
+    }
+}
+
+/* Normal Monitors (>= 1024px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .iphone-frame::before {
+        width: 200px;
+        height: 30px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .iphone-frame::after {
+        width: 60px;
+        height: 8px;
+        border-radius: 4px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+    
+    section {
+        padding: 4rem 2rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .iphone-frame {
+        width: 386px;
+        height: 750px;
+        border-radius: 40px;
+    }
+
+    .pricing {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 sütunlu grid */
+        gap: 10px; /* Kartlar arasındaki boşluğu azalt */
+        justify-content: center; /* İçeriği ortalar */
+        align-items: start; /* Kartların hizasını ayarlar */
+        padding: 20px; /* Kenarlardaki boşluğu azalt */
+    }
+
+    .steps {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Laptop Screens (>= 768px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .iphone-frame::before {
+        width: 180px;
+        height: 25px;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+    }
+
+    .iphone-frame::after {
+        width: 55px;
+        height: 7px;
+        border-radius: 3px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 3.5rem 1.5rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .iphone-frame {
+        width: 345px;
+        height: 685px;
+        border-radius: 35px;
+    }
+
+    .pricing {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .booking-step{
+        left: 0;
+    }
+}
+
+/* Tablets (>= 600px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    .iphone-frame::before {
+        width: 140px;
+        height: 18px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    .iphone-frame::after {
+        width: 45px;
+        height: 5px;
+        border-radius: 3px;
+    }
+    .iphone-frame::before {
+        width: 160px;
+        height: 20px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .iphone-frame::after {
+        width: 50px;
+        height: 6px;
+        border-radius: 3px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 3rem 1rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+
+    .iphone-frame {
+        width: 320px;
+        height: 600px;
+        border-radius: 30px;
+    }
+
+    .pricing {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cta-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .booking-step{
+        left: 0;
+    }
+    
+}
+
+/* Small Tablets & Phones (>= 400px) */
+@media (min-width: 400px) and (max-width: 599px) {
+    .iphone-frame::before {
+        width: 120px;
+        height: 15px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .iphone-frame::after {
+        width: 40px;
+        height: 4px;
+        border-radius: 3px;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+    
+    section {
+        padding: 2.5rem 1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .iphone-frame {
+        width: 280px;
+        height: 550px;
+        border-radius: 25px;
+    }
+
+    .pricing {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .booking-step{
+        left: 0;
+    }
+}
+
+/* Phones (< 400px) */
+@media (max-width: 399px) {
+    .iphone-frame::before {
+        width: 120px;
+        height: 15px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .iphone-frame::after {
+        width: 40px;
+        height: 4px;
+        border-radius: 3px;
+    }
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    section {
+        padding: 2rem 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .iphone-frame {
+        width: 250px;
+        height: 500px;
+        border-radius: 20px;
+    }
+
+    .pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .booking-step{
+        left: 0;
+    }
+}
