@@ -5,6 +5,7 @@ booking-steps {
     color: var(--text-color);
 }
 
+
 .booking-step {
     position: absolute;
     width: 100%;
@@ -22,9 +23,9 @@ booking-steps {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     margin: auto;
+    animation: slideIn 0.5s ease-out;
     
 }
-
 
 
 .booking-step h3 {
@@ -38,4 +39,51 @@ booking-steps {
     font-size: 16px;
     color: #666;
     margin-bottom: 20px;
+}
+
+.space-y-6 {
+    margin-top: 1.5rem;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.step-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #9ca3af;
+}
+
+.step-icon.active {
+    color: var(--primary-color);
+}
+
+.step-icon i {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.step-icon span {
+    font-size: 0.75rem;
+}
+
+.step-container {
+    position: relative;
+    min-height: 500px;
+}
+
+
+.booking-step.hidden {
+    display: none;
+}
+
+.step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }

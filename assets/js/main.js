@@ -1,157 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    // Initialize Lucide icons
+    lucide.createIcons();
 
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Teşekkürler! En kısa sürede size ulaşacağız.');
-            contactForm.reset();
-        });
-    }
-
-    // Booking steps animation
-    const steps = document.querySelectorAll('.booking-step');
     let currentStep = 0;
-    const animationDuration = 3000; // 3 seconds per step
+    let selectedService = null;
+    let selectedBarber = null;
+    let selectedDate = null;
+    let selectedTime = null;
 
-    function showStep(stepIndex) {
-        steps.forEach((step, index) => {
-            if (step) {
-                step.style.transform = `translateX(${(index - stepIndex) * 100}%)`;
-                step.style.opacity = index === stepIndex ? '1' : '0';
-            }
-        });
+    const steps = ['serviceStep', 'barberStep', 'dateStep', 'timeStep'];
+    const stepIcons = document.querySelectorAll('.step-icon');
+
+    // Initialize calendar
+    const calendarGrid = document.getElementById('calendarGrid');
+    for (let i = 1; i <= 30; i++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = i;
+        dayElement.dataset.day = i - 1;
+        calendarGrid.appendChild(dayElement);
     }
 
-    function animateBookingProcess() {
-        showStep(currentStep);
+    function updateStepVisibility() {
+        // Hide all steps
+        document.querySelectorAll('.booking-step').forEach(step => {
+            step.classList.add('hidden');
+        });
         
-        // Remove previous selections
-        document.querySelectorAll('.selected').forEach(el => {
-            if (el) {
+        // Show current step
+        document.getElementById(steps[currentStep]).classList.remove('hidden');
+
+        // Update step indicators
+        stepIcons.forEach((icon, index) => {
+            icon.classList.toggle('active', index === currentStep);
+        });
+    }
+
+    function autoSelectOption() {
+        const options = {
+            0: { selector: '.service-option', max: 3, variable: selectedService },
+            1: { selector: '#barberStep .service-option', max: 3, variable: selectedBarber },
+            2: { selector: '.calendar-day', max: 30, variable: selectedDate },
+            3: { selector: '.time-slot', max: 6, variable: selectedTime }
+        };
+
+        const currentOptions = options[currentStep];
+        if (currentOptions) {
+            // Clear previous selection
+            document.querySelectorAll(currentOptions.selector).forEach(el => {
                 el.classList.remove('selected');
-            }
-        });
-
-        // Add new selection based on step
-        const currentStepElement = steps[currentStep];
-        if (currentStepElement) {
-            setTimeout(() => {
-                switch(currentStep) {
-                    case 0: // Service
-                        const serviceOption = currentStepElement.querySelector('.service-option');
-                        if (serviceOption) {
-                            serviceOption.classList.add('selected');
-                        }
-                        break;
-                    case 1: // Barber
-                        const barberOption = currentStepElement.querySelector('.barber-option');
-                        if (barberOption) {
-                            barberOption.classList.add('selected');
-                        }
-                        break;
-                    case 2: // Date
-                        const calendarDay = currentStepElement.querySelector('.calendar-day');
-                        if (calendarDay) {
-                            calendarDay.classList.add('selected');
-                        }
-                        break;
-                    case 3: // Time
-                        const timeSlot = currentStepElement.querySelector('.time-slot');
-                        if (timeSlot) {
-                            timeSlot.classList.add('selected');
-                        }
-                        break;
-                    case 4: // Personal Info
-                        // Form fills automatically
-                        break;
-                }
-            }, 500);
-        }
-
-        currentStep = (currentStep + 1) % steps.length;
-    }
-
-    // Only start animation if we have booking steps
-    if (steps.length > 0) {
-        animateBookingProcess();
-        setInterval(animateBookingProcess, animationDuration);
-    }
-
-    // Add scroll animation for benefits
-    const benefitCards = document.querySelectorAll('.benefit-card');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    });
-
-    benefitCards.forEach(card => {
-        if (card) {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.5s ease-out';
-            observer.observe(card);
-        }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const calendarGrid = document.querySelector(".calendar-grid");
-    const calendarHeader = document.querySelector(".calendar-header span");
-
-    let today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth();
-
-    const monthNames = [
-        "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
-        "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
-    ];
-
-    function renderCalendar() {
-        calendarGrid.innerHTML = "";
-        calendarHeader.textContent = `${monthNames[month]} ${year}`;
-
-        let firstDay = new Date(year, month, 1).getDay();
-        let lastDate = new Date(year, month + 1, 0).getDate();
-
-        firstDay = firstDay === 0 ? 7 : firstDay; // Pazarı en sona almak için
-
-        for (let i = 1; i < firstDay; i++) {
-            let emptyCell = document.createElement("div");
-            calendarGrid.appendChild(emptyCell);
-        }
-
-        for (let day = 1; day <= lastDate; day++) {
-            let dateCell = document.createElement("div");
-            dateCell.textContent = day;
-            dateCell.className = "calendar-day";
-
-            dateCell.addEventListener("click", function () {
-                document.querySelectorAll(".calendar-day").forEach(el => el.classList.remove("selected"));
-                this.classList.add("selected");
             });
 
-            calendarGrid.appendChild(dateCell);
+            // Make new random selection
+            const randomIndex = Math.floor(Math.random() * currentOptions.max);
+            const selectedElement = document.querySelector(`${currentOptions.selector}[data-id="${randomIndex}"]`) ||
+                                  document.querySelector(`${currentOptions.selector}[data-day="${randomIndex}"]`);
+            
+            if (selectedElement) {
+                selectedElement.classList.add('selected');
+            }
         }
     }
 
-    renderCalendar();
+    // Auto advance steps
+    setInterval(() => {
+        currentStep = (currentStep + 1) % 4;
+        updateStepVisibility();
+    }, 6000);
+
+    // Auto select options
+    setInterval(autoSelectOption, 2000);
+
+    // Initial setup
+    updateStepVisibility();
+    autoSelectOption();
 });
