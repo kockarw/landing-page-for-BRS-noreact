@@ -104,65 +104,6 @@ h2 {
     margin: 0 auto 1rem;
 }
 
-.pricing {
-    background: var(--light-bg);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-}
-
-.price-card {
-    background: var(--white);
-    padding: 3rem 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.price-card ul {
-    flex-grow: 1; /* Listenin boşluğu doldurmasını sağlar */
-}
-
-.pricing-title{
-    background: var(--light-bg);
-}
-
-.price-cardMost{
-    border: 2px solid #000;
-}
-
-.most-popular{
-    background-color: #000;
-    border-radius: 1rem;
-    color: white;
-}
-
-.price {
-    font-size: 3rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 1rem 0;
-}
-
-.price span {
-    font-size: 1.5rem;
-}
-
-.price-card ul {
-    list-style: none;
-    margin: 2rem 0;
-}
-
-.price-card li {
-    margin: 1rem 0;
-}
-
-
 .contact-form {
     max-width: 500px;
     margin: 0 auto;
