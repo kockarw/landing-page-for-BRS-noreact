@@ -35,10 +35,6 @@
         border-radius: 50px;
     }
 
-    .pricing {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     .steps {
         grid-template-columns: repeat(5, 1fr);
     }
@@ -84,15 +80,6 @@
         width: 386px;
         height: 750px;
         border-radius: 40px;
-    }
-
-    .pricing {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 10px; 
-        justify-content: center; 
-        align-items: start; 
-        padding: 20px; 
     }
 
     .steps {
@@ -141,10 +128,6 @@
         border-radius: 35px;
     }
 
-    .pricing {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .steps {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -173,18 +156,6 @@
         height: 5px;
         border-radius: 3px;
     }
-    .iphone-frame::before {
-        width: 160px;
-        height: 20px;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-
-    .iphone-frame::after {
-        width: 50px;
-        height: 6px;
-        border-radius: 3px;
-    }
     .hero-content h1 {
         font-size: 2rem;
     }
@@ -207,10 +178,6 @@
         border-radius: 30px;
     }
 
-    .pricing {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .steps {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -223,7 +190,6 @@
     .booking-step{
         left: 0;
     }
-    
 }
 
 /* Small Tablets & Phones (>= 400px) */
@@ -260,10 +226,6 @@
         width: 280px;
         height: 550px;
         border-radius: 25px;
-    }
-
-    .pricing {
-        grid-template-columns: repeat(1, 1fr);
     }
 
     .steps {
@@ -316,10 +278,6 @@
         border-radius: 20px;
     }
 
-    .pricing {
-        grid-template-columns: 1fr;
-    }
-
     .steps {
         grid-template-columns: 1fr;
     }
@@ -333,3 +291,5 @@
         left: 0;
     }
 }
+
+

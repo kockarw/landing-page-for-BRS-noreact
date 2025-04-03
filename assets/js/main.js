@@ -9,6 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     initializeLucide();
 
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Show button when page is scrolled down
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+    
+    // Scroll to top when button is clicked
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     let currentStep = 0;
     let selectedService = null;
     let selectedBarber = null;
@@ -104,6 +124,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial setup
     updateStepVisibility();
     autoSelectOption();
+
+    // Phone number formatting - SIMPLIFIED VERSION
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    
+    phoneInputs.forEach(input => {
+        // Only allow numbers
+        input.addEventListener('keypress', function(e) {
+            if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+        
+        // Format as user types
+        input.addEventListener('input', function() {
+            // Remove all non-digits
+            let value = this.value.replace(/\D/g, '');
+            
+            // Limit to 10 digits
+            if (value.length > 10) {
+                value = value.substring(0, 10);
+            }
+            
+            // Format as (XXX) XXX XXXX
+            if (value.length >= 6) {
+                value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + ' ' + value.substring(6);
+            } else if (value.length >= 3) {
+                value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
+            }
+            
+            this.value = value;
+        });
+    });
+
+    // Email formatting
+    const emailInputs = document.querySelectorAll('input[type="email"]');
+    
+    emailInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            let value = this.value.toLowerCase();
+            if (value && !value.includes('@')) {
+                value += '@';
+            }
+            this.value = value;
+        });
+    });
 });
 
 
