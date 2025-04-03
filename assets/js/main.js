@@ -105,3 +105,23 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStepVisibility();
     autoSelectOption();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".cta-button").forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault(); // Sayfanın varsayılan atlamasını engelle
+  
+        const targetId = this.getAttribute("href"); // Hedef ID'yi al (#contact, #features vb.)
+        const targetElement = document.querySelector(targetId);
+  
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+  
+          // URL'nin değişmesini engelle
+          history.replaceState(null, null, " ");
+        }
+      });
+    });
+  });
+  

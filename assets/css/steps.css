@@ -81,3 +81,14 @@
 .summary-item:last-child {
     margin-bottom: 0;
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.25rem; 
+    font-weight: 600;
+    color: #374151;
+}

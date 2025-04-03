@@ -12,6 +12,7 @@
         height: 10px;
         border-radius: 5px;
     }
+    
     .hero-content h1 {
         font-size: 3rem;
     }
@@ -87,11 +88,11 @@
 
     .pricing {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 sütunlu grid */
-        gap: 10px; /* Kartlar arasındaki boşluğu azalt */
-        justify-content: center; /* İçeriği ortalar */
-        align-items: start; /* Kartların hizasını ayarlar */
-        padding: 20px; /* Kenarlardaki boşluğu azalt */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px; 
+        justify-content: center; 
+        align-items: start; 
+        padding: 20px; 
     }
 
     .steps {
