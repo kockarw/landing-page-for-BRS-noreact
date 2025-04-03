@@ -262,7 +262,7 @@
                     <li>✓ Mobil uyumlu tasarım</li>
                     <li>✓ Otomatik yedekleme</li>
                 </ul>
-                <a href="#contact" class="cta-button">Hemen Başlayın</a>
+                <a href="#contact" class="cta-button" data-package="ekonomik">Hemen Başlayın</a>
             </div>
 
             <div class="price-card price-cardMost">
@@ -280,7 +280,7 @@
                     <li>✓ WhatsApp entegrasyonu</li>
                     <li>✓ Gelişmiş istatistikler</li>
                 </ul>
-                <a href="#contact" class="cta-button">Hemen Başlayın</a>
+                <a href="#contact" class="cta-button" data-package="orta">Hemen Başlayın</a>
             </div>
 
             <div class="price-card">
@@ -298,7 +298,7 @@
                     <li>✓ Özel entegrasyonlar</li>
                     <li>✓ Marka özelleştirme</li>
                 </ul>
-                <a href="#contact" class="cta-button">Hemen Başlayın</a>
+                <a href="#contact" class="cta-button" data-package="premium">Hemen Başlayın</a>
             </div>
 
             <div class="price-card">
@@ -318,13 +318,17 @@
                     <li>✓ API erişimi</li>
                     <li>✓ Çoklu şube desteği</li>
                 </ul>
-                <a href="#contact" class="cta-button">Hemen Başlayın</a>
+                <a href="#contact" class="cta-button" data-package="premium-plus">Hemen Başlayın</a>
             </div>
         </section>
     </div>
 
     <section id="contact" class="contact">
         <h2>Hemen Başlayın</h2>
+        <div class="selected-package">
+            <p>Seçilen Paket: <span id="packageName">-</span></p>
+            <p>Paket Fiyatı: <span id="packagePrice">-</span></p>
+        </div>
         <form id="contactForm" class="contact-form">
             <input type="text" placeholder="İşletme Adı" required>
             <input type="tel" placeholder="Telefon Numarası" required>
