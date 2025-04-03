@@ -88,39 +88,43 @@
                 <div class="space-y-6 p-4">
                     <div class="step-indicator">
                         <div class="step-icon">
-                            <i data-lucide="scissors"></i>
+                            <i icon-name="scissors"></i>
                             <span>Hizmet</span>
                         </div>
                         <div class="step-icon">
-                            <i data-lucide="user"></i>
+                            <i icon-name="user"></i>
                             <span>Berber</span>
                         </div>
                         <div class="step-icon">
-                            <i data-lucide="calendar"></i>
+                            <i icon-name="calendar"></i>
                             <span>Tarih</span>
                         </div>
                         <div class="step-icon">
-                            <i data-lucide="clock"></i>
+                            <i icon-name="clock"></i>
                             <span>Saat</span>
+                        </div>
+                        <div class="step-icon">
+                            <i icon-name="contact"></i>
+                            <span>Bilgiler</span>
                         </div>
                     </div>
     
                     <div class="step-container">
                         <!-- Service Step -->
-                        <div class="booking-step" id="serviceStep">
-                            <h2 class="step-title">Select Service</h2>
+                        <div class="booking-step active" id="serviceStep">
+                            <h2 class="step-title">Hizmet Seçin</h2>
                             <div class="service-options">
                                 <div class="service-option" data-id="0">
                                     <div>
                                         <h3>Saç Traşı</h3>
-                                        <p>30 dakika</p>
+                                        <p>60 dakika</p>
                                     </div>
-                                    <span>₺300</span>
+                                    <span>₺350</span>
                                 </div>
                                 <div class="service-option" data-id="1">
                                     <div>
                                         <h3>Sakal Traşı</h3>
-                                        <p>30 dakika</p>
+                                        <p>60 dakika</p>
                                     </div>
                                     <span>₺250</span>
                                 </div>
@@ -129,13 +133,13 @@
                                         <h3>Saç Boyama</h3>
                                         <p>120 dakika</p>
                                     </div>
-                                    <span>₺2000</span>
+                                    <span>₺3000</span>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Barber Step -->
-                        <div class="booking-step hidden" id="barberStep">
+                        <div class="booking-step" id="barberStep">
                             <h2 class="step-title">Berber Seçin</h2>
                             <div class="barber-options">
                                 <div class="service-option" data-id="0">
@@ -160,16 +164,16 @@
                         </div>
     
                         <!-- Date Step -->
-                        <div class="booking-step hidden" id="dateStep">
+                        <div class="booking-step" id="dateStep">
                             <h2 class="step-title">Tarih Seçin</h2>
                             <div class="calendar">
-                                <div class="calendar-header">Mart 2024</div>
+                                <div class="calendar-header">Nisan 2024</div>
                                 <div class="calendar-grid" id="calendarGrid"></div>
                             </div>
                         </div>
     
                         <!-- Time Step -->
-                        <div class="booking-step hidden" id="timeStep">
+                        <div class="booking-step" id="timeStep">
                             <h2 class="step-title">Saat Seçin</h2>
                             <div class="time-slots">
                                 <div class="time-slot" data-id="0">08:00</div>
@@ -188,6 +192,41 @@
                                 <div class="time-slot" data-id="13">21:00</div>
                                 <div class="time-slot" data-id="14">22:00</div>
                                 <div class="time-slot" data-id="15">23:00</div>
+                            </div>
+                        </div>
+    
+                        <!-- Contact Step -->
+                        <div class="booking-step" id="contactStep">
+                            <h2 class="step-title">Kişisel Bilgiler</h2>
+                            <div class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Ad Soyad</label>
+                                    <input type="text" id="name" placeholder="Ömer Koçkar">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefon Numarası</label>
+                                    <input type="tel" id="phone" placeholder="(555) 123-4567">
+                                </div>
+                            </div>
+    
+                            <div class="booking-summary">
+                                <h3>Randevu Özeti</h3>
+                                <div class="summary-item">
+                                    <span>Service:</span>
+                                    <span id="selectedService">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Barber:</span>
+                                    <span id="selectedBarber">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Date:</span>
+                                    <span id="selectedDate">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Time:</span>
+                                    <span id="selectedTime">-</span>
+                                </div>
                             </div>
                         </div>
                     </div>
