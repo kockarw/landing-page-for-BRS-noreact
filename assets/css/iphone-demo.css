@@ -58,6 +58,43 @@
     border-radius: 1px;
 }
 
+/* Responsive düzenlemeler için medya sorguları */
+@media (min-width: 1200px) {
+    .iphone-frame {
+        padding: 16px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .iphone-frame {
+        padding: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .iphone-frame {
+        padding: 12px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+    .iphone-frame {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .iphone-frame {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 399px) {
+    .iphone-frame {
+        padding: 6px;
+    }
+}
+
 /* these keyframs should stay here */
 
 @keyframes slideIn {
