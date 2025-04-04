@@ -12,10 +12,39 @@
     background: var(--primary-color);
     color: white;
     padding: 15px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.calendar-nav-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calendar-nav-btn i {
+    width: 16px;
+    height: 16px;
 }
 
 .weekdays {
