@@ -90,3 +90,23 @@ p {
         font-size: 20px;
     }
 }
+
+/* Smooth Scroll Animation */
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section-animate {
+    animation: slideInFromBottom 0.8s ease-out forwards;
+}

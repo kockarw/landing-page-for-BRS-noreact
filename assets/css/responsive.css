@@ -1,16 +1,16 @@
 /* Large Monitors (>= 1200px) */
 @media (min-width: 1200px) {
     .iphone-frame::before {
-        width: 220px;
-        height: 35px;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
+        width: 176px;
+        height: 28px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 
     .iphone-frame::after {
-        width: 70px;
-        height: 10px;
-        border-radius: 5px;
+        width: 56px;
+        height: 8px;
+        border-radius: 4px;
     }
     
     .hero-content h1 {
@@ -30,9 +30,10 @@
     }
 
     .iphone-frame {
-        width: 400px;
-        height: 780px;
-        border-radius: 50px;
+        width: 320px;
+        height: 624px;
+        border-radius: 40px;
+        border: 8px solid #000;
     }
 
     .steps {
@@ -49,16 +50,16 @@
 /* Normal Monitors (>= 1024px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
     .iphone-frame::before {
-        width: 200px;
-        height: 30px;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        width: 160px;
+        height: 24px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
     }
 
     .iphone-frame::after {
-        width: 60px;
-        height: 8px;
-        border-radius: 4px;
+        width: 48px;
+        height: 6px;
+        border-radius: 3px;
     }
     .hero-content h1 {
         font-size: 2.5rem;
@@ -77,9 +78,10 @@
     }
 
     .iphone-frame {
-        width: 386px;
-        height: 750px;
-        border-radius: 40px;
+        width: 308px;
+        height: 600px;
+        border-radius: 32px;
+        border: 7px solid #000;
     }
 
     .steps {
@@ -95,15 +97,15 @@
 /* Laptop Screens (>= 768px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .iphone-frame::before {
-        width: 180px;
-        height: 25px;
-        border-bottom-left-radius: 18px;
-        border-bottom-right-radius: 18px;
+        width: 144px;
+        height: 20px;
+        border-bottom-left-radius: 14px;
+        border-bottom-right-radius: 14px;
     }
 
     .iphone-frame::after {
-        width: 55px;
-        height: 7px;
+        width: 44px;
+        height: 6px;
         border-radius: 3px;
     }
     .hero-content h1 {
@@ -123,9 +125,10 @@
     }
 
     .iphone-frame {
-        width: 345px;
-        height: 685px;
-        border-radius: 35px;
+        width: 276px;
+        height: 548px;
+        border-radius: 28px;
+        border: 6px solid #000;
     }
 
     .steps {
@@ -145,16 +148,16 @@
 /* Tablets (>= 600px) */
 @media (min-width: 600px) and (max-width: 767px) {
     .iphone-frame::before {
-        width: 140px;
-        height: 18px;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
+        width: 112px;
+        height: 14px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .iphone-frame::after {
-        width: 45px;
-        height: 5px;
-        border-radius: 3px;
+        width: 36px;
+        height: 4px;
+        border-radius: 2px;
     }
     .hero-content h1 {
         font-size: 2rem;
@@ -173,9 +176,10 @@
     }
 
     .iphone-frame {
-        width: 320px;
-        height: 600px;
-        border-radius: 30px;
+        width: 256px;
+        height: 480px;
+        border-radius: 24px;
+        border: 5px solid #000;
     }
 
     .steps {
@@ -195,16 +199,16 @@
 /* Small Tablets & Phones (>= 400px) */
 @media (min-width: 400px) and (max-width: 599px) {
     .iphone-frame::before {
-        width: 120px;
-        height: 15px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        width: 96px;
+        height: 12px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
     }
 
     .iphone-frame::after {
-        width: 40px;
-        height: 4px;
-        border-radius: 3px;
+        width: 32px;
+        height: 3px;
+        border-radius: 2px;
     }
     .hero-content h1 {
         font-size: 1.8rem;
@@ -223,9 +227,10 @@
     }
 
     .iphone-frame {
-        width: 280px;
-        height: 550px;
-        border-radius: 25px;
+        width: 224px;
+        height: 440px;
+        border-radius: 20px;
+        border: 5px solid #000;
     }
 
     .steps {
@@ -245,16 +250,16 @@
 /* Phones (< 400px) */
 @media (max-width: 399px) {
     .iphone-frame::before {
-        width: 120px;
-        height: 15px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        width: 96px;
+        height: 12px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
     }
 
     .iphone-frame::after {
-        width: 40px;
-        height: 4px;
-        border-radius: 3px;
+        width: 32px;
+        height: 3px;
+        border-radius: 2px;
     }
     .hero-content h1 {
         font-size: 1.5rem;
@@ -273,9 +278,10 @@
     }
 
     .iphone-frame {
-        width: 250px;
-        height: 500px;
-        border-radius: 20px;
+        width: 200px;
+        height: 400px;
+        border-radius: 18px;
+        border: 5px solid #000;
     }
 
     .steps {

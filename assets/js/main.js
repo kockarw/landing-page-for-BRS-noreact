@@ -253,19 +253,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for all anchor links
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".cta-button").forEach((button) => {
-          button.addEventListener("click", function (e) {
-            e.preventDefault(); // Sayfanın varsayılan atlamasını engelle
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
     
-            const targetId = this.getAttribute("href"); // Hedef ID'yi al (#contact, #features vb.)
-            const targetElement = document.querySelector(targetId);
+                const targetId = this.getAttribute("href");
+                const targetElement = document.querySelector(targetId);
     
-            if (targetElement) {
-              targetElement.scrollIntoView({ behavior: "smooth" });
-    
-              // URL'nin değişmesini engelle
-              history.replaceState(null, null, " ");
-            }
-          });
+                if (targetElement) {
+                    // Remove animation class if it exists
+                    targetElement.classList.remove('section-animate');
+                    
+                    // Scroll to the element
+                    targetElement.scrollIntoView({ behavior: "smooth" });
+                    
+                    // Add animation class after a small delay
+                    setTimeout(() => {
+                        targetElement.classList.add('section-animate');
+                    }, 100);
+                    
+                    // Prevent URL change
+                    history.replaceState(null, null, " ");
+                }
+            });
         });
     });
 });
