@@ -34,4 +34,64 @@
 
 .booking-contact-form input[type="tel"] {
     letter-spacing: 0.5px;
+}
+
+/* Booking Submit Button Styles */
+.booking-submit-button {
+    width: 100%;
+    padding: 0.6rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.booking-submit-button:hover {
+    background: var(--secondary-color);
+}
+
+/* Button Click Animation */
+.booking-submit-button.button-clicked {
+    transform: scale(0.95);
+    background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .booking-submit-button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Booking Success Message */
+.booking-success-message {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.booking-success-message i {
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 } 

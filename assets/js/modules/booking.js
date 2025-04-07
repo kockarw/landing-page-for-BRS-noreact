@@ -40,6 +40,12 @@ export function updateStepVisibility() {
             // Ensure the new step is visible before adding the active class
             setTimeout(() => {
                 step.classList.add('active');
+                
+                // If we're on the contact step, auto-click the submit button
+                if (index === 4) { // contactStep is index 4
+                    setTimeout(autoClickSubmitButton, 1500);
+                    setTimeout(autoClickSubmitButton, 4000);
+                }
             }, 50);
         }
     });
@@ -48,6 +54,20 @@ export function updateStepVisibility() {
     stepIcons.forEach((icon, index) => {
         icon.classList.toggle('active', index === bookingData.currentStep);
     });
+}
+
+// Auto-click submit button
+function autoClickSubmitButton() {
+    const submitButton = document.querySelector('.booking-submit-button');
+    if (submitButton) {
+        // Add click animation class
+        submitButton.classList.add('button-clicked');
+        
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            submitButton.classList.remove('button-clicked');
+        }, 300);
+    }
 }
 
 // Update booking summary
