@@ -36,12 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!cleanupAutoAdvancement) {
                     cleanupAutoAdvancement = setupAutoAdvancement();
                 }
-            } else {
-                // If features section is not visible, stop auto advancement
-                if (cleanupAutoAdvancement) {
-                    cleanupAutoAdvancement();
-                    cleanupAutoAdvancement = null;
-                }
             }
         });
     }, { threshold: 0.5 });
