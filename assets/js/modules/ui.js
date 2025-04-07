@@ -6,7 +6,11 @@
 export function initializeLucide() {
     const init = () => {
         if (window.lucide) {
-            window.lucide.createIcons();
+            window.lucide.createIcons({
+                attrs: {
+                    'data-lucide': true
+                }
+            });
         } else {
             setTimeout(init, 100);
         }

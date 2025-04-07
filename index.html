@@ -91,23 +91,23 @@
                 <div class="space-y-6 p-4">
                     <div class="step-indicator">
                         <div class="step-icon">
-                            <i icon-name="scissors"></i>
+                            <i data-lucide="scissors"></i>
                             <span>Hizmet</span>
                         </div>
                         <div class="step-icon">
-                            <i icon-name="user"></i>
+                            <i data-lucide="user"></i>
                             <span>Berber</span>
                         </div>
                         <div class="step-icon">
-                            <i icon-name="calendar"></i>
+                            <i data-lucide="calendar"></i>
                             <span>Tarih</span>
                         </div>
                         <div class="step-icon">
-                            <i icon-name="clock"></i>
+                            <i data-lucide="clock"></i>
                             <span>Saat</span>
                         </div>
                         <div class="step-icon">
-                            <i icon-name="contact"></i>
+                            <i data-lucide="contact"></i>
                             <span>Bilgiler</span>
                         </div>
                     </div>
@@ -172,11 +172,11 @@
                             <div class="calendar">
                                 <div class="calendar-header">
                                     <button class="calendar-nav-btn prev">
-                                        <i icon-name="chevron-left"></i>
+                                        <i data-lucide="chevron-left"></i>
                                     </button>
                                     <h3>Nisan</h3>
                                     <button class="calendar-nav-btn next">
-                                        <i icon-name="chevron-right"></i>
+                                        <i data-lucide="chevron-right"></i>
                                     </button>
                                 </div>
                                 <div class="weekdays">
@@ -218,7 +218,7 @@
                         <!-- Contact Step -->
                         <div class="booking-step" id="contactStep">
                             <h2 class="step-title">Kişisel Bilgiler</h2>
-                            <div class="contact-form">
+                            <div class="booking-contact-form">
                                 <div class="form-group">
                                     <label for="name">Ad Soyad</label>
                                     <input type="text" id="name" placeholder="Ömer Koçkar">
@@ -228,7 +228,7 @@
                                     <input type="tel" id="phone" placeholder="(555) 123-4567">
                                 </div>
                             </div>
-    
+
                             <div class="booking-summary">
                                 <h3>Randevu Özeti</h3>
                                 <div class="summary-item">
@@ -339,9 +339,9 @@
             <p>Paket Fiyatı: <span id="packagePrice">-</span></p>
         </div>
         <form id="contactForm" class="contact-form">
-            <input type="text" placeholder="İşletme Adı" required>
-            <input type="tel" placeholder="Telefon Numarası" required>
-            <input type="email" placeholder="E-posta" required>
+            <input type="text" name="businessName" placeholder="İşletme Adı" required>
+            <input type="tel" name="phone" placeholder="Telefon Numarası" required>
+            <input type="email" name="email" placeholder="E-posta" required>
             <button type="submit" class="cta-button">Bize Ulaşın</button>
         </form>
     </section>
@@ -356,19 +356,19 @@
             <div class="footer-section">
                 <h4>İletişim</h4>
                 <ul class="contact-info">
-                    <li><i icon-name="mail"></i> <a href="mailto:sefa@sefyazilim.com">sefa@sefyazilim.com</a></li>
-                    <li><i icon-name="phone"></i> <a href="tel:+905301386352">+90 530 138 63 52</a></li>
-                    <li><i icon-name="map-pin"></i> Ünalan Mah Aşık Şenlik Sokak NO 16 A, Üsküdar/İstanbul</li>
+                    <li><i data-lucide="mail"></i> <a href="mailto:sefa@sefyazilim.com">sefa@sefyazilim.com</a></li>
+                    <li><i data-lucide="phone"></i> <a href="tel:+905301386352">+90 530 138 63 52</a></li>
+                    <li><i data-lucide="map-pin"></i> Ünalan Mah Aşık Şenlik Sokak NO 16 A, Üsküdar/İstanbul</li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>Bizi Takip Edin</h4>
                 <ul class="social-links">
-                    <li><a href="#"><i icon-name="facebook"></i></a></li>
+                    <li><a href="#"><i data-lucide="facebook"></i></a></li>
                     <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a></li>
-                    <li><a href="#"><i icon-name="instagram"></i></a></li>
-                    <li><a href="#"><i icon-name="linkedin"></i></a></li>
+                    <li><a href="#"><i data-lucide="instagram"></i></a></li>
+                    <li><a href="#"><i data-lucide="linkedin"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -379,7 +379,21 @@
     
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top">
-        <i icon-name="arrow-up"></i>    
+        <i data-lucide="arrow-up"></i>    
     </button>
+
+    <!-- Success Popup -->
+    <div class="success-popup" id="successPopup">
+        <div class="success-popup-content">
+            <button class="close-button" id="closePopup">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="success-icon">
+                <i data-lucide="check-circle"></i>
+            </div>
+            <h3>Başarılı!</h3>
+            <p>Talebiniz başarıyla alındı, en kısa sürede iletişime geçeceğiz.</p>
+        </div>
+    </div>
 </body>
 </html>
