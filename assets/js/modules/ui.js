@@ -63,6 +63,14 @@ export function setupSmoothScrolling() {
                     targetElement.classList.add('section-animate');
                 }, 100);
                 
+                // If the button is "Nasıl Çalışır?", reset the steps
+                if (targetId === '#features') {
+                    // Import and call resetSteps
+                    import('./booking.js').then(module => {
+                        module.resetSteps();
+                    });
+                }
+                
                 // Prevent URL change
                 history.replaceState(null, null, " ");
             }

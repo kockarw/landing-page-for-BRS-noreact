@@ -149,4 +149,25 @@ export function setupAutoAdvancement() {
     // Initial setup
     updateStepVisibility();
     autoSelectOption();
+}
+
+// Reset steps to the first step
+export function resetSteps() {
+    // Reset current step to 0
+    bookingData.currentStep = 0;
+    
+    // Reset all selections
+    bookingData.selectedService = null;
+    bookingData.selectedBarber = null;
+    bookingData.selectedDate = null;
+    bookingData.selectedTime = null;
+    
+    // Clear all selections in the UI
+    document.querySelectorAll('.service-option.selected, .calendar-day.selected, .time-slot.selected').forEach(el => {
+        el.classList.remove('selected');
+    });
+    
+    // Update the UI
+    updateStepVisibility();
+    updateBookingSummary();
 } 
