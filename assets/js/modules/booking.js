@@ -98,7 +98,7 @@ function autoClickSubmitButton() {
 export function updateBookingSummary() {
     document.getElementById('selectedService').textContent = bookingData.selectedService !== null ? bookingData.services[bookingData.selectedService] : '-';
     document.getElementById('selectedBarber').textContent = bookingData.selectedBarber !== null ? bookingData.barbers[bookingData.selectedBarber] : '-';
-    document.getElementById('selectedDate').textContent = bookingData.selectedDate !== null ? `Nisan ${bookingData.selectedDate + 1}, 2024` : '-';
+    document.getElementById('selectedDate').textContent = bookingData.selectedDate !== null ? `Nisan ${bookingData.selectedDate + 1}, 2025` : '-';
     document.getElementById('selectedTime').textContent = bookingData.selectedTime !== null ? bookingData.times[bookingData.selectedTime] : '-';
 }
 
