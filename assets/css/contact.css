@@ -362,4 +362,114 @@
 
 .contact-form button:hover {
     background: var(--secondary-color);
+}
+
+/* Warning Popup Styles */
+.warning-popup {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    z-index: 1000;
+    display: none;
+    width: 575px;
+    height: 135px;
+    transition: all 0.3s ease;
+}
+
+.warning-popup.show {
+    display: flex;
+    animation: slideInLeft 0.3s ease forwards;
+}
+
+.warning-popup-content {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.warning-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.warning-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.warning-popup h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-align: left;
+}
+
+.warning-popup p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+    text-align: left;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .warning-popup {
+        width: calc(100% - 40px);
+        height: auto;
+        min-height: 100px;
+        padding: 1rem;
+        right: 20px;
+        left: 20px;
+    }
+
+    .warning-popup-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .warning-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .warning-icon i {
+        font-size: 1.5rem;
+    }
+
+    .warning-popup h3 {
+        font-size: 1.1rem;
+    }
+
+    .warning-popup p {
+        font-size: 0.9rem;
+    }
 } 

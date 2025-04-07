@@ -14,6 +14,9 @@ export function setupContactForm() {
     const packagePrice = document.getElementById('packagePrice');
     const popupMessage = document.querySelector('.success-popup p');
     const backToTopButton = document.getElementById('backToTop');
+    const warningPopup = document.getElementById('warningPopup');
+    const warningMessage = document.getElementById('warningMessage');
+    const closeWarningBtn = document.getElementById('closeWarningPopup');
 
     // If form doesn't exist, return
     if (!form) {
@@ -22,6 +25,23 @@ export function setupContactForm() {
     }
 
     console.log('Form element found:', form);
+
+    // Function to show warning popup
+    function showWarning(message) {
+        if (warningPopup && warningMessage) {
+            warningMessage.textContent = message;
+            warningPopup.style.display = 'flex';
+            warningPopup.classList.add('show');
+            
+            // Hide warning popup after 5 seconds
+            setTimeout(() => {
+                warningPopup.classList.remove('show');
+                setTimeout(() => {
+                    warningPopup.style.display = 'none';
+                }, 300);
+            }, 5000);
+        }
+    }
 
     // Add click event listener to the submit button
     const submitButton = form.querySelector('button[type="submit"]');
@@ -33,7 +53,7 @@ export function setupContactForm() {
             // Check if a package is selected first
             if (packageName.textContent === '-' || packagePrice.textContent === '-') {
                 console.log('Validation failed: No package selected');
-                alert('Lütfen bir paket seçin.');
+                showWarning('Lütfen bir paket seçin.');
                 return;
             }
             
@@ -84,7 +104,7 @@ export function setupContactForm() {
         // Validate form
         if (!formValues.businessName || !formValues.phone || !formValues.email) {
             console.log('Validation failed: Empty fields');
-            alert('Lütfen tüm alanları doldurun.');
+            showWarning('Lütfen tüm alanları doldurun.');
             return;
         }
 
@@ -92,7 +112,7 @@ export function setupContactForm() {
         const phoneRegex = /^\(\d{3}\) \d{3} \d{4}$/;
         if (!phoneRegex.test(formValues.phone)) {
             console.log('Validation failed: Invalid phone format');
-            alert('Lütfen geçerli bir telefon numarası girin.');
+            showWarning('Lütfen geçerli bir telefon numarası girin.');
             return;
         }
 
@@ -100,7 +120,7 @@ export function setupContactForm() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formValues.email)) {
             console.log('Validation failed: Invalid email format');
-            alert('Lütfen geçerli bir e-posta adresi girin.');
+            showWarning('Lütfen geçerli bir e-posta adresi girin.');
             return;
         }
 
@@ -144,12 +164,21 @@ export function setupContactForm() {
         }
     });
 
-    // Handle popup close button
+    // Handle popup close buttons
     if (closeBtn && popup) {
         closeBtn.addEventListener('click', function() {
             popup.classList.remove('show');
             setTimeout(() => {
                 popup.style.display = 'none';
+            }, 300);
+        });
+    }
+
+    if (closeWarningBtn && warningPopup) {
+        closeWarningBtn.addEventListener('click', function() {
+            warningPopup.classList.remove('show');
+            setTimeout(() => {
+                warningPopup.style.display = 'none';
             }, 300);
         });
     }
