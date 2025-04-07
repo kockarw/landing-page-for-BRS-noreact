@@ -10,6 +10,10 @@ export function setupContactForm() {
     const form = document.getElementById('contactForm');
     const popup = document.getElementById('successPopup');
     const closeBtn = document.getElementById('closePopup');
+    const packageName = document.getElementById('packageName');
+    const packagePrice = document.getElementById('packagePrice');
+    const popupMessage = document.querySelector('.success-popup p');
+    const backToTopButton = document.getElementById('backToTop');
 
     // If form doesn't exist, return
     if (!form) {
@@ -25,6 +29,14 @@ export function setupContactForm() {
         submitButton.addEventListener('click', function(e) {
             console.log('Submit button clicked');
             e.preventDefault();
+            
+            // Check if a package is selected first
+            if (packageName.textContent === '-' || packagePrice.textContent === '-') {
+                console.log('Validation failed: No package selected');
+                alert('Lütfen bir paket seçin.');
+                return;
+            }
+            
             form.dispatchEvent(new Event('submit'));
         });
     }
@@ -94,6 +106,11 @@ export function setupContactForm() {
 
         console.log('Form validation passed');
 
+        // Update popup message with selected package
+        if (popupMessage && packageName) {
+            popupMessage.innerHTML = `<strong>${packageName.textContent}</strong> ile ilgili talebiniz alındı, en kısa sürede iletişime geçeceğiz.`;
+        }
+
         // Show success popup
         if (popup) {
             console.log('Showing success popup');
@@ -109,8 +126,22 @@ export function setupContactForm() {
             }, 5000);
         }
 
-        // Reset form
+        // Reset form and package selection
         form.reset();
+        if (packageName) packageName.textContent = '-';
+        if (packagePrice) packagePrice.textContent = '-';
+        
+        // Hide selected package section
+        const selectedPackage = document.querySelector('.selected-package');
+        if (selectedPackage) {
+            selectedPackage.style.display = 'none';
+        }
+
+        // Trigger back to top button click
+        if (backToTopButton) {
+            console.log('Triggering back to top button click');
+            backToTopButton.click();
+        }
     });
 
     // Handle popup close button
