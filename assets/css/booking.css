@@ -1,0 +1,37 @@
+/* Booking Contact Form Styles */
+.booking-contact-form {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.booking-contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.booking-contact-form label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.booking-contact-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.booking-contact-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.booking-contact-form input[type="tel"] {
+    letter-spacing: 0.5px;
+} 
