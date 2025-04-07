@@ -41,10 +41,34 @@ export function updateStepVisibility() {
             setTimeout(() => {
                 step.classList.add('active');
                 
-                // If we're on the contact step, auto-click the submit button
+                // If we're on the contact step, auto-click inputs and submit button
                 if (index === 4) { // contactStep is index 4
-                    setTimeout(autoClickSubmitButton, 1500);
-                    setTimeout(autoClickSubmitButton, 4000);
+                    // Click on name input first
+                    setTimeout(() => {
+                        const nameInput = document.getElementById('name');
+                        if (nameInput) {
+                            nameInput.focus();
+                            nameInput.classList.add('input-focused');
+                            setTimeout(() => {
+                                nameInput.classList.remove('input-focused');
+                            }, 300);
+                        }
+                    }, 1000);
+                    
+                    // Click on phone input second
+                    setTimeout(() => {
+                        const phoneInput = document.getElementById('phone');
+                        if (phoneInput) {
+                            phoneInput.focus();
+                            phoneInput.classList.add('input-focused');
+                            setTimeout(() => {
+                                phoneInput.classList.remove('input-focused');
+                            }, 300);
+                        }
+                    }, 2000);
+                    
+                    // Click on submit button last
+                    setTimeout(autoClickSubmitButton, 3000);
                 }
             }, 50);
         }
