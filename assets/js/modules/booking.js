@@ -138,17 +138,23 @@ export function autoSelectOption() {
 // Setup auto advancement
 export function setupAutoAdvancement() {
     // Auto advance steps
-    setInterval(() => {
+    const stepInterval = setInterval(() => {
         bookingData.currentStep = (bookingData.currentStep + 1) % 5;
         updateStepVisibility();
     }, 6000);
 
     // Auto select options
-    setInterval(autoSelectOption, 2000);
+    const optionInterval = setInterval(autoSelectOption, 2000);
 
     // Initial setup
     updateStepVisibility();
     autoSelectOption();
+
+    // Return cleanup function
+    return () => {
+        clearInterval(stepInterval);
+        clearInterval(optionInterval);
+    };
 }
 
 // Reset steps to the first step
